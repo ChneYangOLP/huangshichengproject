@@ -1,0 +1,29 @@
+[
+  {
+    "id": "A001",
+    "name": "清太宗实录",
+    "content": "记载清太宗皇太极时期的重要史事。原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [500, 500],
+    "start_year": 1640,
+    "end_year": 1912
+  },
+  {
+    "id": "A002",
+    "name": "东殿绝密档案",
+    "content": "存放于东殿的特殊文件，涉及皇家绝密。",
+    "hall": "EastHall",
+    "cabinet_coords": [300, 400],
+    "start_year": 1700,
+    "end_year": 1850
+  },
+  {
+    "id": "A003",
+    "name": "西殿修缮纪要",
+    "content": "记录西殿数次修缮的工程纪要，包含了建筑结构的重要数据。",
+    "hall": "WestHall",
+    "cabinet_coords": [700, 200],
+    "start_year": 1500,
+    "end_year": 1900
+  }
+]

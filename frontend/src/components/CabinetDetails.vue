@@ -49,7 +49,7 @@ const navigate = () => {
 </template>
 
 <style scoped>
-.cabinet-panel { position: absolute; z-index: 450; top: 20px; right: 44px; bottom: 24px; width: 365px; max-width: calc(100% - 24px); padding: 20px 24px; display: flex; flex-direction: column; background: #faf3e5; border: 1px solid #af9069; border-top: 3px solid var(--cinnabar); box-shadow: -8px 8px 28px #49321e20; }
+.cabinet-panel { min-width: 0; min-height: 0; position: absolute; z-index: 450; top: 20px; right: 44px; bottom: 24px; width: 365px; max-width: calc(100% - 24px); padding: 20px 24px; display: flex; flex-direction: column; background: #faf3e5; border: 1px solid #af9069; border-top: 3px solid var(--cinnabar); box-shadow: -8px 8px 28px #49321e20; }
 .panel-topline { display: flex; align-items: center; justify-content: space-between; color: #a17b42; font-size: 10px; letter-spacing: .1em; }.panel-topline button { background: none; border: 0; color: #8e7860; font-size: 25px; padding: 0 5px; }
 .cabinet-heading { padding: 10px 0 16px; border-bottom: 1px solid #cbb99a; margin-bottom: 18px; }.cabinet-heading > span, .archive-number { font-size: 10px; color: #947f63; }.cabinet-heading h2 { font: 500 26px/1.3 Georgia, serif; color: #69382a; margin: 7px 0 12px; }
 .navigate-button { display: flex; justify-content: space-between; width: 100%; padding: 9px 13px; border: 1px solid #82342a; background: #963c32; color: #fff0d8; font-size: 12px; letter-spacing: .06em; }.navigate-button:hover { background: #7d2f28; }
@@ -61,4 +61,15 @@ const navigate = () => {
 @media (max-width: 1100px) { .cabinet-panel { right: 25px; } }
 @media (max-width: 900px) { .cabinet-panel { top: auto; height: 44%; width: auto; left: 25px; padding: 12px 18px; }.cabinet-heading { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 5px 0 10px; margin-bottom: 10px; }.cabinet-heading h2 { font-size: 20px; margin: 0; }.navigate-button { width: auto; margin-left: auto; gap: 10px; padding: 6px 9px; font-size: 10px; }.archive-title { font-size: 18px; } }
 @media (max-width: 700px) { .cabinet-panel { left: 12px; right: 12px; bottom: 14px; padding: 10px 14px; }.cabinet-heading > span { display: none; }.cabinet-heading h2 { font-size: 18px; }.panel-topline { font-size: 9px; }.panel-body p { font-size: 11px; } }
+@media (max-height: 650px) {
+  .cabinet-panel { padding: 12px 16px; }
+  .panel-topline, .cabinet-heading { flex-shrink: 0; }
+  .cabinet-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 5px 0 10px; margin-bottom: 10px; }
+  .cabinet-heading > span { display: none; }
+  .cabinet-heading h2 { font-size: 20px; margin: 0; }
+  .navigate-button { width: auto; margin-left: auto; gap: 10px; padding: 6px 9px; }
+}
+@media (max-height: 520px) and (min-width: 601px) and (max-width: 900px) {
+  .cabinet-panel { top: 10px; bottom: 10px; height: auto; left: auto; width: 280px; }
+}
 </style>

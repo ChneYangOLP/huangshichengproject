@@ -14,7 +14,7 @@ GitHub Pages 发布网页、平面图、模型、档案数据和 WASM
 
 WebAssembly 是浏览器能够执行的一种编译格式，这里仍然执行你原来的 C++ A* 算法。Java/JNI 后端不用部署。GitHub Pages 本身只能托管静态网站，不能运行 Spring Boot；把寻路移入浏览器正好解决这个问题。[GitHub Pages 说明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[Emscripten 模块说明](https://emscripten.org/docs/compiling/Modularized-Output.html)。
 
-**当前状态：教程与示例已备好；网页尚未切换到 WASM，也尚未发布。** 按下面顺序操作即可。已有 Docker 方案可以保留，两条路线任选其一。
+**当前状态：已切换到 WASM，并成功发布。** 访问 [皇史宬 · 时空图谱](https://chneyangolp.github.io/huangshichengproject/)。云端实际 WASM 测试已确认全部 168 个金匮可达、避障且路线最短，连续金匮寻路检查及现有 10 项测试通过。下文保留完整部署与更新步骤，供重新部署时使用。
 
 ## 1. 确定要使用的 GitHub 仓库
 
@@ -187,6 +187,6 @@ npm --prefix frontend run dev
 | 本机切换后寻路暂时不能用 | 按第 7 步取回云端生成的 WASM；本地仅切换适配器不会自动安装编译器。 |
 | 网址在某些网络中访问缓慢或无法打开 | GitHub Pages 在不同网络下可达性不同，可以先换网络验证。 |
 
-已在隔离副本检查：准备脚本可重复运行；C++ 接口可编译并通过绕障、不可达等检查；切换后的 Vue/TypeScript 网页可按仓库路径构建；现有 10 项测试通过。本机没有安装 Emscripten，因此这些检查不等于实际 WASM 已编译成功。
+首次发布记录：[GitHub Actions 成功运行](https://github.com/ChneYangOLP/huangshichengproject/actions/runs/39188602294)。已实际编译 WASM、通过全部 168 个金匮的路线检查和现有 10 项测试，并确认公网首页与 WASM 文件可访问。生成的两个 WASM 文件也已下载到本机 `frontend/public/wasm`，可直接启动前端开发服务。
 
-本教程没有替你推送、启用 Pages 或发布网站；首次真正的 WASM 编译和浏览器运行验证仍需通过上述 Actions 和公网检查完成。
+本机无需安装 Emscripten。发布后的浏览器视觉检查因浏览器验证工具连接超时未完成；以上结果来自云端执行、线上文件访问和本机运行实际 WASM 的检查。

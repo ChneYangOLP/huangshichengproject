@@ -1,5 +1,9 @@
 package com.huangshicheng.algorithm;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+
 /**
  * NativePathProvider 
  * 
@@ -8,17 +12,29 @@ package com.huangshicheng.algorithm;
  */
 public class NativePathProvider {
 
-    // 静态代码块，在类加载时自动加载 C++ 编译生成的动态链接库
-    static {
+    private static final Throwable LOAD_FAILURE = loadEngine();
+
+    private static Throwable loadEngine() {
         try {
-            // 加载名为 PathEngine 的动态库 (Mac下自动解析为 libPathEngine.dylib，Win下为 PathEngine.dll)
-            // 请确保编译后的动态库放置在 JVM 的库路径中，如 src/main/resources/lib 并配置启动参数 -Djava.library.path=...
-            // 或者在应用启动时动态释放并使用 System.load() 绝对路径加载
             System.loadLibrary("PathEngine");
-        } catch (UnsatisfiedLinkError e) {
-            System.err.println("Native library failed to load.\n" + e);
+            return null;
+        } catch (UnsatisfiedLinkError original) {
+            // Also support IDEA, Maven and packaged JAR startup without VM options.
+            String name = System.mapLibraryName("PathEngine");
+            try (var library = NativePathProvider.class.getResourceAsStream("/lib/" + name)) {
+                if (library == null) return original;
+                var extracted = Files.createTempFile("hsc-PathEngine-", name.substring(name.lastIndexOf('.')));
+                extracted.toFile().deleteOnExit();
+                Files.copy(library, extracted, StandardCopyOption.REPLACE_EXISTING);
+                System.load(extracted.toAbsolutePath().toString());
+                return null;
+            } catch (IOException | UnsatisfiedLinkError error) {
+                return error;
+            }
         }
     }
+
+    public boolean isAvailable() { return LOAD_FAILURE == null; }
 
     /**
      * native 方法：执行底层 A-Star 寻路算法。

@@ -315,7 +315,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.plan-shell { position: relative; width: 100%; height: 100%; overflow: hidden; border: 1px solid #b59a75; border-radius: 0; background: #e9d8bb; box-shadow: 0 8px 30px #72542c18, inset 0 0 0 5px #d5ba91; }
+.plan-shell { container-type: size; position: relative; width: 100%; height: 100%; overflow: hidden; border: 1px solid #b59a75; border-radius: 0; background: #e9d8bb; box-shadow: 0 8px 30px #72542c18, inset 0 0 0 5px #d5ba91; }
 .plan-shell::after { content: ''; position: absolute; inset: 8px; border: 1px solid #9e78546b; pointer-events: none; z-index: 410; }
 .plan-canvas { width: 100%; height: 100%; background: #e9d8bb; }
 .plan-error { position: absolute; inset: 0; z-index: 415; display: flex; gap: 12px; align-items: center; justify-content: center; color: #744b30; background: #f3e7d2; font-size: 12px; }.plan-error button { border: 1px solid #a47e56; padding: 7px 10px; background: #fbefdd; }
@@ -364,4 +364,22 @@ onBeforeUnmount(() => {
 :deep(.route-tooltip) { color: #963c32; font-size: 10px; }
 @media (max-width: 650px) { .wayfinding-tools { top: 104px; left: 15px; max-width: calc(100% - 30px); }.wayfinding-tools button { font-size: 9px; padding: 5px 6px; }.route-status { left: 15px; bottom: 90px; font-size: 9px; max-width: calc(100% - 30px); } }
 @media (max-width: 650px) { .plan-heading { padding: 0; border: 0; box-shadow: none; background: #f8edd9e8; }.plan-kicker { display: none; }.plan-heading h2 { font-size: 16px; margin-top: 0; }.wayfinding-tools { top: 65px; } }
+@container (max-width: 650px) or (max-height: 300px) {
+  .plan-heading { top: 12px; left: 12px; padding: 0; border: 0; box-shadow: none; background: #f8edd9e8; }
+  .plan-kicker { display: none; }
+  .plan-heading h2 { font-size: 16px; margin-top: 0; }
+  .plan-caption { font-size: 9px; }
+  .plan-tools { top: 12px; right: 12px; gap: 3px; }
+  .plan-tools button { min-width: 30px; height: 31px; font-size: 17px; padding: 0 5px; }
+  .plan-tools .reset-button { font-size: 10px; }
+  .wayfinding-tools { top: 65px; left: 12px; max-width: calc(100% - 24px); }
+  .wayfinding-tools button { font-size: 9px; padding: 5px 6px; }
+  .plan-note { left: 12px; bottom: 62px; font-size: 9px; }
+  .route-status { left: 12px; bottom: 90px; font-size: 9px; max-width: calc(100% - 24px); }
+}
+@container (max-height: 300px) {
+  .plan-caption, .plan-note { display: none; }
+  .wayfinding-tools { top: 48px; }
+  .route-status { bottom: 12px; max-width: calc(100% - 156px); padding: 5px 8px; }
+}
 </style>

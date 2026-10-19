@@ -15,7 +15,8 @@ let engine: Promise<AStarModule> | undefined;
 
 function loadEngine() {
   if (!engine) {
-    const base = import.meta.env.BASE_URL + 'wasm/';
+    // An absolute URL also avoids Vite treating a public file as a source import.
+    const base = new URL(import.meta.env.BASE_URL + 'wasm/', window.location.href).href;
     engine = (async () => {
       try {
         const module: { default: Factory } = await import(/* @vite-ignore */ base + 'astar.mjs');

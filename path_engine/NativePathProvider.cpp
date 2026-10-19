@@ -18,7 +18,11 @@ extern "C" {
  */
 JNIEXPORT jintArray JNICALL Java_com_huangshicheng_algorithm_NativePathProvider_findPath
   (JNIEnv *env, jobject thisObj, jint startX, jint startY, jint endX, jint endY, jobjectArray mapDataArray) {
-    
+    auto invalidMap = [&]() -> jintArray {
+        env->ThrowNew(env->FindClass("java/lang/IllegalArgumentException"), "Invalid navigation grid");
+        return nullptr;
+    };
+    if (mapDataArray == nullptr) return invalidMap();
     // 1. 获取二维数组的高度 (行数)
     jsize height = env->GetArrayLength(mapDataArray);
     if (height == 0) {
@@ -27,17 +31,30 @@ JNIEXPORT jintArray JNICALL Java_com_huangshicheng_algorithm_NativePathProvider_
 
     // 2. 获取二维数组的宽度 (列数，取第一行长度)
     jintArray firstRow = (jintArray) env->GetObjectArrayElement(mapDataArray, 0);
+    if (firstRow == nullptr) return invalidMap();
     jsize width = env->GetArrayLength(firstRow);
     env->DeleteLocalRef(firstRow);
+    if (width == 0) return env->NewIntArray(0);
+    if (static_cast<long long>(width) * height > 1000000) return invalidMap();
 
     // 3. 将 Java 中不连续的二维 jobjectArray 转换为 C++ 中连续存储的 std::vector (一维降维处理)
     // 这样做可以极大提高 A* 算法的寻址速度和缓存命中率
     std::vector<int> cppMapData(width * height, 0);
     for (int y = 0; y < height; ++y) {
         jintArray rowArray = (jintArray) env->GetObjectArrayElement(mapDataArray, y);
+        if (rowArray == nullptr || env->GetArrayLength(rowArray) != width) {
+            if (rowArray != nullptr) env->DeleteLocalRef(rowArray);
+            return invalidMap();
+        }
         jint *rowElements = env->GetIntArrayElements(rowArray, JNI_FALSE);
+        if (rowElements == nullptr) { env->DeleteLocalRef(rowArray); return nullptr; }
         
         for (int x = 0; x < width; ++x) {
+            if (rowElements[x] != 0 && rowElements[x] != 1) {
+                env->ReleaseIntArrayElements(rowArray, rowElements, JNI_ABORT);
+                env->DeleteLocalRef(rowArray);
+                return invalidMap();
+            }
             cppMapData[y * width + x] = rowElements[x];
         }
         

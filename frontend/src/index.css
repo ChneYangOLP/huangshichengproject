@@ -1,9 +1,30 @@
 @import "tailwindcss";
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+:root {
+  font-family: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif CJK SC', serif;
+  color: #3d362d;
+  background: #f2eadb;
+  font-synthesis: none;
+  --paper: #f2eadb;
+  --paper-light: #faf5e9;
+  --ink: #3d362d;
+  --muted: #887860;
+  --cinnabar: #963c32;
+  --gold: #a3824f;
+  --line: #b9a48166;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; width: 100%; min-width: 320px; height: 100dvh; overflow: hidden; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button, a, input { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 4px; }
+button:disabled { cursor: default; opacity: .45; }
+::selection { background: #963c3225; color: #6e2822; }
+.custom-scrollbar { scrollbar-width: thin; scrollbar-color: #b9a481 transparent; }
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #b9a481; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }

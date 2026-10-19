@@ -1,29 +1,722 @@
 [
   {
-    "id": "A001",
-    "name": "清太宗实录",
-    "content": "记载清太宗皇太极时期的重要史事。原存放于主殿金匮内。",
+    "id": "M001",
+    "name": "主殿档案卷宗第1册",
+    "content": "皇家园林修缮的图纸与工程记录，包含了大量建筑数据。 原存放于主殿金匮内。",
     "hall": "MainHall",
-    "cabinet_coords": [500, 500],
-    "start_year": 1640,
+    "cabinet_coords": [
+      200,
+      200
+    ],
+    "start_year": 1563,
     "end_year": 1912
   },
   {
-    "id": "A002",
-    "name": "东殿绝密档案",
-    "content": "存放于东殿的特殊文件，涉及皇家绝密。",
-    "hall": "EastHall",
-    "cabinet_coords": [300, 400],
-    "start_year": 1700,
-    "end_year": 1850
+    "id": "M002",
+    "name": "主殿档案卷宗第2册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      200,
+      350
+    ],
+    "start_year": 1506,
+    "end_year": 1912
   },
   {
-    "id": "A003",
-    "name": "西殿修缮纪要",
-    "content": "记录西殿数次修缮的工程纪要，包含了建筑结构的重要数据。",
+    "id": "M003",
+    "name": "主殿档案卷宗第3册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      200,
+      500
+    ],
+    "start_year": 1851,
+    "end_year": 1912
+  },
+  {
+    "id": "M004",
+    "name": "主殿档案卷宗第4册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      200,
+      650
+    ],
+    "start_year": 1750,
+    "end_year": 1912
+  },
+  {
+    "id": "M005",
+    "name": "主殿档案卷宗第5册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      200,
+      800
+    ],
+    "start_year": 1401,
+    "end_year": 1912
+  },
+  {
+    "id": "M006",
+    "name": "主殿档案卷宗第6册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      350,
+      200
+    ],
+    "start_year": 1686,
+    "end_year": 1912
+  },
+  {
+    "id": "M007",
+    "name": "主殿档案卷宗第7册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      350,
+      350
+    ],
+    "start_year": 1567,
+    "end_year": 1912
+  },
+  {
+    "id": "M008",
+    "name": "主殿档案卷宗第8册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      350,
+      500
+    ],
+    "start_year": 1592,
+    "end_year": 1912
+  },
+  {
+    "id": "M009",
+    "name": "主殿档案卷宗第9册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      350,
+      650
+    ],
+    "start_year": 1804,
+    "end_year": 1912
+  },
+  {
+    "id": "M010",
+    "name": "主殿档案卷宗第10册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      350,
+      800
+    ],
+    "start_year": 1459,
+    "end_year": 1912
+  },
+  {
+    "id": "M011",
+    "name": "主殿档案卷宗第11册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      500,
+      200
+    ],
+    "start_year": 1681,
+    "end_year": 1912
+  },
+  {
+    "id": "M012",
+    "name": "主殿档案卷宗第12册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      500,
+      350
+    ],
+    "start_year": 1538,
+    "end_year": 1912
+  },
+  {
+    "id": "M013",
+    "name": "主殿档案卷宗第13册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      500,
+      500
+    ],
+    "start_year": 1419,
+    "end_year": 1912
+  },
+  {
+    "id": "M014",
+    "name": "主殿档案卷宗第14册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      500,
+      650
+    ],
+    "start_year": 1766,
+    "end_year": 1912
+  },
+  {
+    "id": "M015",
+    "name": "主殿档案卷宗第15册",
+    "content": "皇家园林修缮的图纸与工程记录，包含了大量建筑数据。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      500,
+      800
+    ],
+    "start_year": 1765,
+    "end_year": 1912
+  },
+  {
+    "id": "M016",
+    "name": "主殿档案卷宗第16册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      650,
+      200
+    ],
+    "start_year": 1756,
+    "end_year": 1912
+  },
+  {
+    "id": "M017",
+    "name": "主殿档案卷宗第17册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      650,
+      350
+    ],
+    "start_year": 1647,
+    "end_year": 1912
+  },
+  {
+    "id": "M018",
+    "name": "主殿档案卷宗第18册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      650,
+      500
+    ],
+    "start_year": 1768,
+    "end_year": 1912
+  },
+  {
+    "id": "M019",
+    "name": "主殿档案卷宗第19册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      650,
+      650
+    ],
+    "start_year": 1848,
+    "end_year": 1912
+  },
+  {
+    "id": "M020",
+    "name": "主殿档案卷宗第20册",
+    "content": "皇家园林修缮的图纸与工程记录，包含了大量建筑数据。 原存放于主殿金匮内。",
+    "hall": "MainHall",
+    "cabinet_coords": [
+      650,
+      800
+    ],
+    "start_year": 1463,
+    "end_year": 1912
+  },
+  {
+    "id": "E021",
+    "name": "东殿档案卷宗第1册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      200,
+      200
+    ],
+    "start_year": 1880,
+    "end_year": 1912
+  },
+  {
+    "id": "E022",
+    "name": "东殿档案卷宗第2册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      200,
+      350
+    ],
+    "start_year": 1449,
+    "end_year": 1912
+  },
+  {
+    "id": "E023",
+    "name": "东殿档案卷宗第3册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      200,
+      500
+    ],
+    "start_year": 1840,
+    "end_year": 1912
+  },
+  {
+    "id": "E024",
+    "name": "东殿档案卷宗第4册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      200,
+      650
+    ],
+    "start_year": 1425,
+    "end_year": 1912
+  },
+  {
+    "id": "E025",
+    "name": "东殿档案卷宗第5册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      200,
+      800
+    ],
+    "start_year": 1806,
+    "end_year": 1912
+  },
+  {
+    "id": "E026",
+    "name": "东殿档案卷宗第6册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      350,
+      200
+    ],
+    "start_year": 1572,
+    "end_year": 1912
+  },
+  {
+    "id": "E027",
+    "name": "东殿档案卷宗第7册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      350,
+      350
+    ],
+    "start_year": 1598,
+    "end_year": 1912
+  },
+  {
+    "id": "E028",
+    "name": "东殿档案卷宗第8册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      350,
+      500
+    ],
+    "start_year": 1455,
+    "end_year": 1912
+  },
+  {
+    "id": "E029",
+    "name": "东殿档案卷宗第9册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      350,
+      650
+    ],
+    "start_year": 1707,
+    "end_year": 1912
+  },
+  {
+    "id": "E030",
+    "name": "东殿档案卷宗第10册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      350,
+      800
+    ],
+    "start_year": 1714,
+    "end_year": 1912
+  },
+  {
+    "id": "E031",
+    "name": "东殿档案卷宗第11册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      500,
+      200
+    ],
+    "start_year": 1471,
+    "end_year": 1912
+  },
+  {
+    "id": "E032",
+    "name": "东殿档案卷宗第12册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      500,
+      350
+    ],
+    "start_year": 1470,
+    "end_year": 1912
+  },
+  {
+    "id": "E033",
+    "name": "东殿档案卷宗第13册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      500,
+      500
+    ],
+    "start_year": 1402,
+    "end_year": 1912
+  },
+  {
+    "id": "E034",
+    "name": "东殿档案卷宗第14册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      500,
+      650
+    ],
+    "start_year": 1476,
+    "end_year": 1912
+  },
+  {
+    "id": "E035",
+    "name": "东殿档案卷宗第15册",
+    "content": "皇家园林修缮的图纸与工程记录，包含了大量建筑数据。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      500,
+      800
+    ],
+    "start_year": 1894,
+    "end_year": 1912
+  },
+  {
+    "id": "E036",
+    "name": "东殿档案卷宗第16册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      650,
+      200
+    ],
+    "start_year": 1557,
+    "end_year": 1912
+  },
+  {
+    "id": "E037",
+    "name": "东殿档案卷宗第17册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      650,
+      350
+    ],
+    "start_year": 1427,
+    "end_year": 1912
+  },
+  {
+    "id": "E038",
+    "name": "东殿档案卷宗第18册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      650,
+      500
+    ],
+    "start_year": 1604,
+    "end_year": 1912
+  },
+  {
+    "id": "E039",
+    "name": "东殿档案卷宗第19册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      650,
+      650
+    ],
+    "start_year": 1622,
+    "end_year": 1912
+  },
+  {
+    "id": "E040",
+    "name": "东殿档案卷宗第20册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于东殿金匮内。",
+    "hall": "EastHall",
+    "cabinet_coords": [
+      650,
+      800
+    ],
+    "start_year": 1763,
+    "end_year": 1912
+  },
+  {
+    "id": "W041",
+    "name": "西殿档案卷宗第1册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于西殿金匮内。",
     "hall": "WestHall",
-    "cabinet_coords": [700, 200],
-    "start_year": 1500,
-    "end_year": 1900
+    "cabinet_coords": [
+      200,
+      200
+    ],
+    "start_year": 1476,
+    "end_year": 1912
+  },
+  {
+    "id": "W042",
+    "name": "西殿档案卷宗第2册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      200,
+      350
+    ],
+    "start_year": 1651,
+    "end_year": 1912
+  },
+  {
+    "id": "W043",
+    "name": "西殿档案卷宗第3册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      200,
+      500
+    ],
+    "start_year": 1430,
+    "end_year": 1912
+  },
+  {
+    "id": "W044",
+    "name": "西殿档案卷宗第4册",
+    "content": "清代重要典章制度的汇总，是研究清代律法的关键文献。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      200,
+      650
+    ],
+    "start_year": 1639,
+    "end_year": 1912
+  },
+  {
+    "id": "W045",
+    "name": "西殿档案卷宗第5册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      200,
+      800
+    ],
+    "start_year": 1609,
+    "end_year": 1912
+  },
+  {
+    "id": "W046",
+    "name": "西殿档案卷宗第6册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      350,
+      200
+    ],
+    "start_year": 1619,
+    "end_year": 1912
+  },
+  {
+    "id": "W047",
+    "name": "西殿档案卷宗第7册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      350,
+      350
+    ],
+    "start_year": 1471,
+    "end_year": 1912
+  },
+  {
+    "id": "W048",
+    "name": "西殿档案卷宗第8册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      350,
+      500
+    ],
+    "start_year": 1799,
+    "end_year": 1912
+  },
+  {
+    "id": "W049",
+    "name": "西殿档案卷宗第9册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      350,
+      650
+    ],
+    "start_year": 1894,
+    "end_year": 1912
+  },
+  {
+    "id": "W050",
+    "name": "西殿档案卷宗第10册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      350,
+      800
+    ],
+    "start_year": 1560,
+    "end_year": 1912
+  },
+  {
+    "id": "W051",
+    "name": "西殿档案卷宗第11册",
+    "content": "皇家园林修缮的图纸与工程记录，包含了大量建筑数据。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      500,
+      200
+    ],
+    "start_year": 1638,
+    "end_year": 1912
+  },
+  {
+    "id": "W052",
+    "name": "西殿档案卷宗第12册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      500,
+      350
+    ],
+    "start_year": 1855,
+    "end_year": 1912
+  },
+  {
+    "id": "W053",
+    "name": "西殿档案卷宗第13册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      500,
+      500
+    ],
+    "start_year": 1406,
+    "end_year": 1912
+  },
+  {
+    "id": "W054",
+    "name": "西殿档案卷宗第14册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      500,
+      650
+    ],
+    "start_year": 1476,
+    "end_year": 1912
+  },
+  {
+    "id": "W055",
+    "name": "西殿档案卷宗第15册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      500,
+      800
+    ],
+    "start_year": 1422,
+    "end_year": 1912
+  },
+  {
+    "id": "W056",
+    "name": "西殿档案卷宗第16册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      650,
+      200
+    ],
+    "start_year": 1655,
+    "end_year": 1912
+  },
+  {
+    "id": "W057",
+    "name": "西殿档案卷宗第17册",
+    "content": "涉及对外朝贡与贸易的档案，是研究当时外交的重要史料。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      650,
+      350
+    ],
+    "start_year": 1537,
+    "end_year": 1912
+  },
+  {
+    "id": "W058",
+    "name": "西殿档案卷宗第18册",
+    "content": "记录了地方官员的述职报告及批示，反映了当时的政治生态。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      650,
+      500
+    ],
+    "start_year": 1703,
+    "end_year": 1912
+  },
+  {
+    "id": "W059",
+    "name": "西殿档案卷宗第19册",
+    "content": "收录历代皇帝御笔亲书，具有极高的书法和历史价值。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      650,
+      650
+    ],
+    "start_year": 1814,
+    "end_year": 1912
+  },
+  {
+    "id": "W060",
+    "name": "西殿档案卷宗第20册",
+    "content": "记载皇室重要起居注，详实记录了每日宫廷生活。 原存放于西殿金匮内。",
+    "hall": "WestHall",
+    "cabinet_coords": [
+      650,
+      800
+    ],
+    "start_year": 1825,
+    "end_year": 1912
   }
 ]

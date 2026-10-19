@@ -1,5 +1,10 @@
 HELP.md
 target/
+/.env
+/frontend/public/wasm/
+src/main/resources/lib/*.dylib
+src/main/resources/lib/*.so
+src/main/resources/lib/*.dll
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

@@ -23,7 +23,8 @@ std::vector<int> astar_find_path(int startX, int startY, int endX, int endY, con
     std::vector<int> ans; // 用于存储最终返回的路径坐标序列 [x1, y1, x2, y2, ...]
 
     // 1. 边界安全检查
-    if (startX < 0 || startX >= width || startY < 0 || startY >= height ||
+    if (width <= 0 || height <= 0 || mapData.size() != static_cast<size_t>(width) * height ||
+        startX < 0 || startX >= width || startY < 0 || startY >= height ||
         endX < 0 || endX >= width || endY < 0 || endY >= height) {
         return ans;
     }

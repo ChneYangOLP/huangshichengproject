@@ -2,6 +2,8 @@
 
 本项目为皇史宬大殿提供从宏观建筑 3D 展示到微观金匮 2D 档案查阅的全栈解决方案，并配备基于 C++ 的底层高性能计算引擎。
 
+网页已接入原版 C++ A* 的 WebAssembly 适配器；推送到 `main` 后，GitHub Actions 会自动编译算法、测试并发布到 GitHub Pages。见 [GitHub Pages + WebAssembly 教程](GITHUB_PAGES_WASM.md)。此方案无需本机安装 Docker 或 Ubuntu；Java/JNI 服务端实现保留供独立使用。
+
 ## 目录结构
 - `/frontend` : 基于 Vue 3 + Vite + Tailwind CSS 的前端可视化工程（包含 3D 与 2D 联动逻辑）。
 - `/src/main/java/...` : Spring Boot 后端工程代码。
@@ -58,12 +60,26 @@ C++ 引擎与 Java 之间通过基本类型和数组进行高速交互：
 
 ## 项目使用教程 (快速启动)
 
+### 启动网页和 WebAssembly 寻路
+
+安装 Node.js，并按 [教程第 7 步](GITHUB_PAGES_WASM.md#7-以后如何本地预览更新) 取回云端生成的两个 WASM 文件后，执行：
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+打开终端输出的地址（通常为 `http://127.0.0.1:5173/`）。平面图点击“寻路”后点金匮，或在金匮档案面板点击“寻路”；首次从入口出发，之后从上一次成功到达的金匮旁继续寻路，也可在通道选择自定起点。寻路保持当前画面比例，“回到入口”重置位置。
+
+当前调用链：网页 → WebAssembly → 原版 `path_engine/AStar.cpp`。加载失败时提示重试，不会改用 JavaScript 算法。下方 Java/JNI 步骤是保留的服务端方案，当前网页无需启动该服务。
+
 ### 1. 启动后端 (Spring Boot)
 后端包含了业务逻辑和对 C++ 寻路引擎的 JNI 调用：
-1. 确保已通过上方指南编译生成了 C++ 动态链接库。
+1. 确保已通过上方 CMake 指南或 `sh path_engine/build-native.sh` 编译生成了 C++ 动态链接库。
 2. 使用 IntelliJ IDEA 打开项目根目录。
-3. 运行 `HscApplication.java` 启动 Spring Boot 服务。
-*(注：如果遇到找不到 `PathEngine` 动态库的报错，请确保在运行配置中的 VM Options 加入 `-Djava.library.path=src/main/resources/lib` 或对应路径)*
+3. 使用 `navigation` 配置运行 `DemoApplication.java`，或在根目录执行 `./mvnw spring-boot:run -Dspring-boot.run.profiles=navigation`。该配置不依赖 MySQL，接口监听 `127.0.0.1:18080`。
+动态库可通过 `java.library.path` 加载，也会自动从 `resources/lib` 提取并加载，无需额外 VM 参数。Windows 请使用 CMake 生成当前平台的库。
 
 ### 2. 启动前端 (Vue 3)
 前端包含了 3D 宏观建筑、2D 殿内微观漫游以及文创扫码系统：
@@ -85,7 +101,7 @@ npm run dev
 cd frontend
 npm run build
 ```
-执行完毕后，`frontend` 目录下会生成一个 `dist` 文件夹。你可以将该文件夹部署到 Nginx、Vercel 或任何静态文件托管平台上。
+执行完毕后，`frontend` 目录下会生成一个 `dist` 文件夹。构建前需要将配套的 `astar.mjs` 和 `astar.wasm` 放在 `frontend/public/wasm`，或使用 GitHub Actions 自动完成编译与发布；静态托管时无需运行 Spring Boot。
 
 ### 4. 核心功能体验指南
 *   **空间漫游**：初始界面为 3D 宏观外景，点击相应入口即可进入大殿内部的 2D 金匮平面图。

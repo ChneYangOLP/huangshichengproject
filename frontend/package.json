@@ -5,8 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:full": "node scripts/dev-full.mjs",
+    "native:build": "sh ../path_engine/build-native.sh",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.mjs",
+    "test:native": "node scripts/test-native.mjs"
   },
   "dependencies": {
     "axios": "^1.7.0",

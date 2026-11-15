@@ -1,0 +1,35 @@
+name: huangshicheng
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: deploy/backend.Dockerfile
+    environment:
+      SPRING_PROFILES_ACTIVE: navigation
+      SERVER_ADDRESS: 0.0.0.0
+      SERVER_PORT: "18080"
+    expose:
+      - "18080"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/web.Dockerfile
+    environment:
+      SITE_ADDRESS: "${SITE_ADDRESS:-:80}"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

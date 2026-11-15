@@ -1,0 +1,14 @@
+.git
+.idea
+.vscode
+**/.DS_Store
+**/node_modules
+**/dist
+**/target
+**/build
+**/*.tsbuildinfo
+**/*.dylib
+**/*.so
+**/*.dll
+.env
+frontend/.env*

@@ -1,0 +1,14 @@
+{$SITE_ADDRESS} {
+    encode zstd gzip
+
+    # Keep /api in the URL; the Spring controller expects this prefix.
+    handle /api/* {
+        reverse_proxy backend:18080
+    }
+
+    handle {
+        root * /srv
+        try_files {path} /index.html
+        file_server
+    }
+}
